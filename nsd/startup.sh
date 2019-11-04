@@ -10,4 +10,4 @@ fi
 nsd-checkconf /etc/nsd/nsd.conf
 
 ## Start nsd
-nsd
+exec "$@"
