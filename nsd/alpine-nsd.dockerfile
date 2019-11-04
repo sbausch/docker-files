@@ -16,11 +16,10 @@ RUN apk add --no-cache nsd
 
 EXPOSE 53 53/udp
 
-RUN mkdir -p /home/nsd
 ADD https://raw.githubusercontent.com/sbausch/docker-files/master/nsd/startup.sh /home/
 ADD https://raw.githubusercontent.com/sbausch/docker-files/master/nsd/nsd.conf /home/nsd/
 ADD https://raw.githubusercontent.com/sbausch/docker-files/master/nsd/dnsdomain.root.zone /home/nsd/
 ADD https://raw.githubusercontent.com/sbausch/docker-files/master/nsd/nsd.conf.sample /home/nsd/
 
 ENTRYPOINT [ "/home/startup.sh" ]
-CMD["nsd"]
+CMD["/etc/init.d/nsd", "start"]
