@@ -1,4 +1,5 @@
-!#/bin/bash
+#!/bin/bash
+set -e
 
 ## Check if config file is present
 ## copy sample files if not in /etc/nsd
