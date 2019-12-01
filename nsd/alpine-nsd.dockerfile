@@ -21,6 +21,7 @@ RUN chmod a+x /home/startup.sh
 ADD https://raw.githubusercontent.com/sbausch/docker-files/master/nsd/nsd.conf /home/nsd/
 ADD https://raw.githubusercontent.com/sbausch/docker-files/master/nsd/dnsdomain.root.zone /home/nsd/
 ADD https://raw.githubusercontent.com/sbausch/docker-files/master/nsd/nsd.conf.sample /home/nsd/
+RUN mkdir -p /var/run/nsd
 
 ENTRYPOINT [ "/home/startup.sh" ]
 CMD["/etc/init.d/nsd", "start"]
