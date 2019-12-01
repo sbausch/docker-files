@@ -5,6 +5,7 @@ set -e
 ## copy sample files if not in /etc/nsd
 if [ ! -f /etc/nsd/nsd.conf ]; then
 	cp /home/nsd/*.* /etc/nsd/
+	chmod -R a+r /etc/nsd
 fi
 ## Check if config file is valid
 
