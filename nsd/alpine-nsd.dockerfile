@@ -24,4 +24,3 @@ ADD https://raw.githubusercontent.com/sbausch/docker-files/master/nsd/nsd.conf.s
 RUN mkdir -p /var/run/nsd
 
 ENTRYPOINT [ "/home/startup.sh" ]
-CMD["/etc/init.d/nsd", "start"]
