@@ -28,10 +28,10 @@ RUN sed -i 's/geteuid/getppid/' /usr/bin/vlc
 
 # Add xTeve and guide2go
 RUN wget https://github.com/xteve-project/xTeVe-Downloads/raw/master/xteve_linux_arm64.zip -O temp.zip; unzip temp.zip -d /usr/bin/; rm temp.zip
-ADD cronjob.sh /
-ADD entrypoint.sh /
-ADD sample_cron.txt /
-ADD sample_xteve.txt /
+ADD https://raw.githubusercontent.com/sbausch/docker-files/master/xTeVe/cronjob.sh /
+ADD https://raw.githubusercontent.com/sbausch/docker-files/master/xTeVe/entrypoint.sh /
+ADD https://raw.githubusercontent.com/sbausch/docker-files/master/xTeVe/sample_cron.txt /
+ADD https://raw.githubusercontent.com/sbausch/docker-files/master/xTeVe/sample_xteve.txt /
 
 # Set executable permissions
 RUN chmod +x /entrypoint.sh
